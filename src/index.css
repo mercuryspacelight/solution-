@@ -1,0 +1,509 @@
+@font-face {
+  font-family: 'EducationalPixel';
+  src: url('/font/EducationalPixel-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body { 
+  margin:0; 
+  background:#000; 
+  font-family:monospace; 
+  font-family: 'EducationalPixel', monospace;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.wrap { 
+  min-height:100vh; 
+  display:flex; 
+  align-items:center; 
+  justify-content:center;  
+}
+
+.window { 
+  width:50vw; 
+  height:70vh; 
+  background:#9b9b9b; 
+  border-radius:10px; 
+  box-shadow:0 20px 40px rgba(0,0,0,.6); 
+  position:relative; 
+  overflow:hidden;
+}
+
+.top { 
+  background:#e5e5e5; 
+  padding:0px 14px; 
+  display:flex; 
+  gap:16px; 
+  font-weight:bold;
+  font-size: 8px;
+  z-index: 1000;
+  align-items: center;
+  cursor: pointer;
+}
+
+.view:hover {
+  color:#f5f5f5;
+  background: #000;
+}
+
+.file:hover {
+  color: #f5f5f5;
+  background: #000;
+}
+
+.special:hover {
+  color: #f5f5f5;
+  background: #000;
+}
+
+.cart:hover {
+  color: #f5f5f5;
+  background: #000;
+}
+
+.desktop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 80px);
+  grid-auto-rows: 100px;
+  gap: 50px;
+
+  align-content: flex-start;
+  border-top: 2px solid black;
+}
+
+.icon { 
+  width:90px; 
+  text-align:center; 
+  cursor:pointer; 
+}
+
+.pixel {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 6px;
+  position: relative;
+}
+
+.pixel img {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+
+.label { 
+  background:#fff; 
+  color:#000;
+  font-size:7px; 
+  padding:1px 4px; 
+  display:inline-block;
+}
+
+.menu-btn {
+  cursor: pointer;
+  padding: 2px 6px;
+}
+
+.menu-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.dropdown {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: #e5e5e5;
+  border: 2px solid #000;
+  width: 210px;
+  z-index: 1100;
+}
+
+.dropdown-first {
+  padding-left: 6px;
+  cursor: pointer;
+}
+
+.dropdown-second {
+  padding-left: 6px;
+  cursor: pointer;
+}
+
+.dropdown-three {
+  padding-left: 6px;
+  cursor: pointer;
+}
+
+.dropdown-item {
+  padding-left: 6px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  color: #f5f5f5;
+  background: #000;
+}
+
+.dropdown-first:hover {
+  color: #f5f5f5;
+  background-color: #000;
+}
+
+.dropdown-second:hover {
+  color: #f5f5f5;
+  background-color: #000;
+}
+
+.dropdown-three:hover {
+  color: #f5f5f5;
+  background-color: #000;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+
+.popupBody {
+  max-width: 104vh;
+  max-height: 66vh;   /* ✔ */
+  overflow: auto;
+  position: relative;
+  background: #ffffff;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.popupTop {
+   background: repeating-linear-gradient(
+    to bottom,
+    #fff 1px,
+    #000 2px,
+    #000 1px
+  );
+  position: relative;
+  height: 20px;
+
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.carrent.label {
+  background-color: #000;
+}
+
+.popupTop span:first-child {
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.close-btn {
+  position: absolute;
+  border: 2px solid black;
+  font-size: 15px;
+  right: 6px;
+  cursor: pointer;
+  padding: 1px 3px;
+}
+
+.three-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: #000;
+}
+
+.character-page {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #f5f5f5; /* светлый фон */
+}
+
+/* КНОПКА */
+.backBtn {
+  position: relative;
+  top: 24px;
+  left: 24px;
+  z-index: 20;
+
+  padding: 10px 18px;
+  font-family: monospace;
+  font-size: 14px;
+
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid #000;
+  cursor: pointer;
+
+  transition: background 0.2s, transform 0.1s;
+}
+
+.backBtn:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+.backBtn:active {
+  transform: translateY(0);
+}
+
+.three-canvas {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== RADIO WINDOW (FIXED) ===== */
+
+.radio-window {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: black;
+  overflow: hidden;
+}
+
+
+/* VIDEO — ВСЕГДА ВИДНО ЦЕЛИКОМ */
+.radio-window video {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  background: black;
+
+  z-index: 1;
+}
+
+
+.radio-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(0,0,0,0.2) 40%,
+      rgba(0,0,0,0.8) 100%
+    );
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* SPOTIFY */
+.radio-player {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+
+  width: 320px;
+  z-index: 3;
+}
+
+.radio-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  background: black;
+
+  z-index: 1;
+}
+
+.watch-bg {
+  width: 100vw;
+  height: 100vh;
+
+  overflow-y: auto;   /* ВКЛЮЧАЕМ СКРОЛЛ */
+  overflow-x: hidden;
+
+  background: black;
+}
+
+.scroll-image {
+  display: block;
+
+  width: 50vw;   /* ВСЯ ШИРИНА ЭКРАНА */
+  height: auto;   /* ВАЖНО — высота естественная */
+
+  object-fit: cover;
+  max-width: 1920px;
+}
+
+.coinflip {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'EducationalPixel', monospace;
+  position: relative;
+}
+
+.coin {
+  padding-bottom: 20px;
+  width: 120px;
+  image-rendering: pixelated;
+  cursor: pointer;
+}
+
+
+.result {
+  margin-top: 14px;
+  font-size: 28px;
+  letter-spacing: 4px;
+}
+
+.hint {
+  position: absolute;
+  bottom: 80px;
+  font-size: 12px;
+  font-weight: bold;
+  padding-right: 7px;
+}
+
+.solution{
+  align-items: center;
+  padding-top: 5px;
+}
+
+.solution :hover img{
+  transform: translateY(-1px);
+  filter:brightness(0) invert(1);
+}
+
+.job-icon { 
+  width: 90px; 
+  text-align: center; 
+  cursor: pointer; 
+}
+
+.job-icon .pixel {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 6px;
+  position: relative;
+}
+
+.job-icon .pixel img {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+
+.job-icon .label { 
+  background: #fff; 
+  color: #000;
+  font-size: 8px; 
+  padding: 2px 6px; 
+  display: inline-block; 
+}
+
+.screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 80px);
+  grid-auto-rows: 100px;
+  gap: 30px;
+
+  align-content: flex-start;                   
+}
+
+/* ===== LEAFLET MAP FIX ===== */
+
+/* контейнер, в котором карта */
+.app-content {
+  flex: 1;
+  min-height: 0; /* КРИТИЧНО ДЛЯ FLEX */
+  position: relative;
+}
+
+.map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: auto !important;
+  background: #ccc;
+}
+
+.leaflet-pane,
+.leaflet-top,
+.leaflet-bottom {
+  pointer-events: auto;
+}
+.leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  z-index: 1;
+}
+
+.map,
+.app-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.popupBody {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  overflow: hidden; /* иначе Leaflet ломается */
+}
+
+/* FIX для image max-width из leaflet.css */
+.leaflet-container img {
+  max-width: none !important;
+}
+
+.ip {
+  position: relative;
+  width: 450px;
+}
+
+.ip h3 {
+  font-size: 12px;
+}
+
+.ip img {
+  width: 280px;
+  height: 250px;
+}
