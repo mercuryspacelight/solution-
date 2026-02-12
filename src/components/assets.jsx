@@ -1,13 +1,18 @@
-import small from "../assets/gleb-icon_small.png"
+import small from "/video/unknown.png"
 
 
 export default function Assets() {
-  <div class name = "hype">
-    <div class name = "solution">
+
+
+
+
+return (
+  <div className = "hype">
+    <div className = "solicon">
       <span>
         <img src={small} style={{ width: 28, height: 28 }}/>
       </span>
     </div>
-    <span>Solution</span>
   </div>
+)
 }
