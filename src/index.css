@@ -189,8 +189,8 @@ html, body, #root {
 
 
 .popupBody {
-  max-width: 104vh;
-  max-height: 66vh;   /* ✔ */
+  max-width: 125vh;
+  max-height: 86vh;   /* ✔ */
   overflow: auto;
   position: relative;
   background: #ffffff;
@@ -357,7 +357,7 @@ html, body, #root {
 .scroll-image {
   display: block;
 
-  width: 50vw;   /* ВСЯ ШИРИНА ЭКРАНА */
+  width: 60vw;   /* ВСЯ ШИРИНА ЭКРАНА */
   height: auto;   /* ВАЖНО — высота естественная */
 
   object-fit: cover;
@@ -381,13 +381,14 @@ html, body, #root {
   width: 120px;
   image-rendering: pixelated;
   cursor: pointer;
+  padding-right: 26px;
 }
 
 
 .result {
   margin-top: 14px;
   font-size: 28px;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
 }
 
 .hint {
