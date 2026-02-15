@@ -446,7 +446,7 @@ html, body, #root {
   display: grid;
   grid-template-columns: repeat(auto-fill, 80px);
   grid-auto-rows: 100px;
-  gap: 30px;
+  gap: 100px;
 
   align-content: flex-start;                   
 }
